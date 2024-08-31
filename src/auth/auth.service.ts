@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common'
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+  UnauthorizedException
+} from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { UserService } from '../user/user.service'
 import { AuthDto } from './dto/auth.dto'
@@ -17,7 +22,7 @@ export class AuthService {
 
   async login(dto: AuthDto) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, ...user} = await this.validateUser(dto)
+    const { password, ...user } = await this.validateUser(dto)
     const tokens = this.issueToken(user.id)
 
     return { user, ...tokens }
@@ -35,7 +40,7 @@ export class AuthService {
   }
 
   private issueToken(userId: string) {
-    const data  = {id: userId}
+    const data = { id: userId }
 
     const accessToken = this.jwt.sign(data, {
       expiresIn: '1h'
@@ -52,7 +57,7 @@ export class AuthService {
     if (!user) throw new NotFoundException('User not found')
 
     const isValidPassword = await verify(user.password, dto.password)
-    if(!isValidPassword) throw new UnauthorizedException('Invalid password')
+    if (!isValidPassword) throw new UnauthorizedException('Invalid password')
 
     return user
   }
@@ -86,7 +91,7 @@ export class AuthService {
 
   async getNewAccessToken(refreshToken: string) {
     const result = this.jwt.verify(refreshToken)
-    if(!result) throw new UnauthorizedException('Invalid refresh token')
+    if (!result) throw new UnauthorizedException('Invalid refresh token')
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...user } = await this.userService.getById(result.id)

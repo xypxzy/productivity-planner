@@ -1,4 +1,12 @@
-import { IsEmail, IsNumber, IsOptional, IsString, Max, Min, MinLength } from 'class-validator'
+import {
+  IsEmail,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Max,
+  Min,
+  MinLength
+} from 'class-validator'
 
 export class PomodoroSettingsDto {
   @IsOptional()

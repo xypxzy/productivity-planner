@@ -18,7 +18,7 @@ export class TaskService {
         ...dto,
         user: {
           connect: { id: userId }
-        },
+        }
       }
     })
   }

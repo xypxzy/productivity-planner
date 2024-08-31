@@ -15,8 +15,7 @@ import { Response, Request } from 'express'
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {
-  }
+  constructor(private readonly authService: AuthService) {}
 
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
@@ -31,7 +30,10 @@ export class AuthController {
   @UsePipes(new ValidationPipe())
   @HttpCode(201)
   @Post('register')
-  async register(@Body() dto: AuthDto, @Res({ passthrough: true }) res: Response) {
+  async register(
+    @Body() dto: AuthDto,
+    @Res({ passthrough: true }) res: Response
+  ) {
     const { refreshToken, ...response } = await this.authService.register(dto)
     this.authService.addRefreshToken(res, refreshToken)
 
@@ -40,15 +42,20 @@ export class AuthController {
 
   @HttpCode(200)
   @Post('login/access-token')
-  async getNewAccessToken(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
-    const refreshTokenFromCookie = req.cookies[this.authService.REFRESH_TOKEN_NAME]
+  async getNewAccessToken(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response
+  ) {
+    const refreshTokenFromCookie =
+      req.cookies[this.authService.REFRESH_TOKEN_NAME]
 
-    if(!refreshTokenFromCookie) {
+    if (!refreshTokenFromCookie) {
       this.authService.removeRefreshToken(res)
       throw new UnauthorizedException('Refresh token not passed')
     }
 
-    const { refreshToken, ...response } = await this.authService.getNewAccessToken(refreshTokenFromCookie)
+    const { refreshToken, ...response } =
+      await this.authService.getNewAccessToken(refreshTokenFromCookie)
 
     this.authService.addRefreshToken(res, refreshToken)
 
@@ -62,6 +69,4 @@ export class AuthController {
 
     return true
   }
-
-
 }
