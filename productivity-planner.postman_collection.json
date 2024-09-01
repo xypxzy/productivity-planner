@@ -1,0 +1,696 @@
+{
+	"info": {
+		"_postman_id": "3f33d5d4-216a-4196-859a-b459f2344ed8",
+		"name": "trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31076952",
+		"_collection_link": "https://red-water-858224.postman.co/workspace/Team-Workspace~f46ffdd3-ba6a-43ff-8892-347b0b3af991/collection/31076952-3f33d5d4-216a-4196-859a-b459f2344ed8?action=share&source=collection_link&creator=31076952"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dd@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dd@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dd@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login/access-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dd@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "All auth handlers"
+		},
+		{
+			"name": "User/profile",
+			"item": [
+				{
+					"name": "/user/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/profile/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dastan Chynybek uulu\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/profile/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User/tasks",
+			"item": [
+				{
+					"name": "/user/tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/tasks/cm0hq8p6e0000iay34p451p3g",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"tasks",
+								"cm0hq8p6e0000iay34p451p3g"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"rise up haha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/tasks/cm0hq8p6e0000iay34p451p3g",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"tasks",
+								"cm0hq8p6e0000iay34p451p3g"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Repair Iphones\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User/time-block",
+			"item": [
+				{
+					"name": "/user/time-block",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/time-blocks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"time-blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/time-block",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Working hours\",\n    \"duration\": 50,\n    \"color\":\"red\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/time-blocks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"time-blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/time-block/update-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"cm0i4ih5f0004rr5bqei7pj8t\", \"cm0i4h33z0002rr5bsw8kw2jy\", \"cm0i4icng0003rr5bjoin60ip\", \"cm0i4h2350001rr5b3h3c5zox\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/time-blocks/update-order",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"time-blocks",
+								"update-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/time-block",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Morning food - coffee\",\n    \"duration\": 40\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/time-blocks/cm0i4evfa0000rr5boydfs7q5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"time-blocks",
+								"cm0i4evfa0000rr5boydfs7q5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/time-block",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MOMO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/time-blocks/cm0i4evfa0000rr5boydfs7q5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"time-blocks",
+								"cm0i4evfa0000rr5boydfs7q5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User/timer",
+			"item": [
+				{
+					"name": "/user/timer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/timer/today",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"timer",
+								"today"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/timer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/timer",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"timer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/timer/round",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"totalSeconds\": 600\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/timer/round/cm0j6llf600073nzc0ubkm5m8",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"timer",
+								"round",
+								"cm0j6llf600073nzc0ubkm5m8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/timer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isCompleted\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/timer/cm0j6llev00003nzclmh0c5eu",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"timer",
+								"cm0j6llev00003nzclmh0c5eu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/timer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MOMO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/timer/cm0j6llev00003nzclmh0c5eu",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"timer",
+								"cm0j6llev00003nzclmh0c5eu"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Pomodoro timer"
+		}
+	]
+}
